@@ -10,26 +10,7 @@
     </ul>
   <% end %>
 
-
-  <%= form_with model: @todo do |td_form| %>   <!-- using '=' erb tag as we're inserting -->
-
-    <div>
-      <%= td_form.label       :name %>            <!-- specifying form field & its value -->
-      <br />
-      <%= td_form.text_field  :name %>          
-    </div>
-
-    <div>
-      <%= td_form.label     :description %>              <!-- label of description field -->
-      <br />
-      <%= td_form.text_area :description %>               <!-- area to enter description -->
-    </div>
-
-    <div>
-      <%= td_form.submit %>                         <!-- submit the data to @td variable -->
-    </div>
-
-  <% end %>                                                      <!-- end the Ruby block -->
+  <%= render 'form' %>                                         <!-- no path necessary here -->
 
   <p> <%= link_to 'Cancel', todos_path %> </p>
 </div>
