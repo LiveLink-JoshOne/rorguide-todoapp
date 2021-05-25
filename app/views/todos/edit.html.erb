@@ -1,5 +1,5 @@
 <div align="center">
-  <h3> Create a new To-Do list item </h3>
+  <h3> Edit To-Do item: <%= @todo.id.to_s %> </h3>
 
   <% if @todo.errors.any? %>                              <!-- check if any errors present -->
     <h3> Your To-Do item could not be saved: </h3>       <!-- if yes, display the messages -->
@@ -31,6 +31,9 @@
 
   <% end %>                                                      <!-- end the Ruby block -->
 
-  <p> <%= link_to 'Cancel', todos_path %> </p>
+  <p>
+    <%= link_to 'Back to To-Do item', todo_path(@todo) %>                <!-- #show link -->
+    |  <%= link_to 'Back to To-Do list', todos_path %>                  <!-- #index link -->
+  </p>
 </div>
 
